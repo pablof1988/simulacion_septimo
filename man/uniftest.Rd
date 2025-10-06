@@ -2,7 +2,7 @@
 % Please edit documentation in R/uniftest.R
 \name{uniftest}
 \alias{uniftest}
-\title{Test for Uniformity U(0, 1)}
+\title{Test for Uniformity Unif(0, 1)}
 \usage{
 uniftest(u)
 }

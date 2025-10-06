@@ -1,4 +1,4 @@
-#' @title Test for Uniformity U(0, 1)
+#' @title Test for Uniformity Unif(0, 1)
 #'
 #' @description
 #' This function implements the chi-square goodness of fit test to prove
