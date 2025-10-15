@@ -1,37 +1,37 @@
-#' @title Test Perio
+#' @title Test of Independence for Random Sequences
 #'
 #' @description
-#' This function analyzes the periodicity of a given numeric or time series.
-#' It estimates the dominant period in the data and tests whether the series
-#' exhibits significant cyclic behavior.
+#'This function performs the Ljung-Box test to verify whether a sequence of random
+#'numbers is truly independent across its lags. It takes the series of generated
+#'values and calculates the autocorrelations between the numbers at different lags
+#'up to a certain limit. Using these autocorrelations, it calculates the Q statistic,
+#'which it then compares to a chi-square distribution to determine whether there is
+#'time dependence.
 #'
-#' @usage periodtest(x)
 #'
-#' @details
-#' The function estimates the periodicity by computing the spectral density of the
-#' sequence using the Fast Fourier Transform (FFT). The frequency corresponding
-#' to the maximum spectral density is identified as the dominant periodic component.
+#' @usage indeptest(x, lags)
 #'
-#' @param x a random sequence
+#' @param x A random sequence
+#' @param lags The number of lags (autocorrelation terms) to include in the test statistic.
 #'
-#' @return
+#' @return The function returns the test statistic (Q), the degrees of freedom,
+#' and the p-value of a chi-square test for serial independence based on
+#' sample autocorrelations up to the specified number of lags.
 #'
-#'— The estimated period (in time units).
-#'— The frequency associated with the strongest cycle.
-#'— The p-value of the periodicity test (if applicable).
-#'— A character string describing the test used.
 #'
-#' @references
-#' Priestley, M. B. (1981). *Spectral Analysis and Time Series*. Academic Press.
-#' Shumway, R. H. & Stoffer, D. S. (2017). *Time Series Analysis and Its Applications: With R Examples*. Springer.
+#' @references Burns, P. (2002). Robustness of the Ljung-Box test and its rank equivalent. Available at SSRN 443560.
 #'
 #' @examples
-#' x <- runif(n = 100)
-#' periodtest(x)
+#' set.seed(123)
+#' x <- rnorm(100)
+#' independ(x, lags = 10)
 #'
 #' @export
-periodtest <- function(x){
-  sum(!duplicated(x))
+independ <- function (x, lags) {
+  n <- length(x)
+  rho <- stats::acf(x, lag.max = lags, type = "correlation", plot = FALSE)$acf[-1]
+  Q <- n * (n + 2) * sum((rho^2) / (n - 1:lags))
+  gl <- lags
+  p_valor <- stats::pchisq(Q, df = gl, lower.tail = FALSE)
+  c(estadist = Q, gl = gl, p_valor = p_valor)
 }
-
-

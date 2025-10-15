@@ -1,14 +1,13 @@
 #' @title Test of Independence for Random Sequences
 #'
 #' @description
-#' This function performs a chi-square test of independence to evaluate
-#' whether a given sequence of random numbers is independent.
-#' The test compares the observed joint frequencies of successive pairs
-#' in the sequence with the expected frequencies under the hypothesis
-#' of independence between consecutive values.
+#'This function performs the Ljung-Box test to verify whether a sequence of random
+#'numbers is truly independent across its lags. It takes the series of generated
+#'values and calculates the autocorrelations between the numbers at different lags
+#'up to a certain limit. Using these autocorrelations, it calculates the Q statistic,
+#'which it then compares to a chi-square distribution to determine whether there is
+#'time dependence.
 #'
-#' The test is commonly used in the analysis of random number generators
-#' to detect potential autocorrelation or dependence patterns in simulated data.
 #'
 #' @usage indeptest(x, lags)
 #'
