@@ -9,7 +9,7 @@
 #'time dependence.
 #'
 #'
-#' @usage indeptest(x, lags)
+#' @usage independ(x, lags)
 #'
 #' @param x A random sequence
 #' @param lags The number of lags (autocorrelation terms) to include in the test statistic.
