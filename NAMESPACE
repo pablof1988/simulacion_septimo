@@ -2,5 +2,6 @@
 
 export(Period)
 export(Squaremean)
+export(gcong)
 export(independ)
 export(uniftest)
