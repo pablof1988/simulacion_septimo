@@ -21,8 +21,8 @@ This function performs the Ljung-Box test to verify whether a sequence of random
 numbers is truly independent across its lags. It takes the series of generated
 values and calculates the autocorrelations between the numbers at different lags
 up to a certain limit. Using these autocorrelations, it calculates the Q statistic,
-which it then compares to a chi-square distribution to determine whether there is
-time dependence.
+which follows a chi-square distribution, to determine whether there is dependence
+between the values of the sequence.
 }
 \examples{
 set.seed(123)

@@ -17,8 +17,8 @@ A numeric vector of length \code{n} containing the generated pseudorandom values
 }
 \description{
 Implements John von Neumann’s *Middle Square Method* to generate a sequence
-of pseudorandom numbers. In each iteration, the seed is squared, the middle
-digits are extracted, and the result is normalized by dividing by \eqn{10^{d}},
+of pseudorandom numbers. In each iteration, the seed is power up to square,
+the middle digits are extracted, and the result is divided by \eqn{10^{d}},
 where \eqn{d} is the number of digits in the original seed.
 }
 \details{

@@ -3,7 +3,7 @@
 #' @description
 #' This function counts the number of unique, non-repeated elements in a sequence or vector.
 #' In other words, it identifies and counts the values that appear exactly once within
-#' the dataset.
+#' the sequence.
 #'
 #' @usage Period(x)
 #'
@@ -11,7 +11,7 @@
 #'
 #' @return Returns a numeric value representing the number of unique, non-repeated
 #' elements in the input sequence or vector.In other words, the count of values
-#' that appear exactly once in the dataset.
+#' that appear exactly once in the sequence.
 #'
 #' @references
 #' R Core Team (2024). R: A Language and Environment for Statistical Computing.

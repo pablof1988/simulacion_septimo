@@ -3,8 +3,8 @@
 #'
 #' @description
 #' Implements John von Neumann’s *Middle Square Method* to generate a sequence
-#' of pseudorandom numbers. In each iteration, the seed is squared, the middle
-#' digits are extracted, and the result is normalized by dividing by \eqn{10^{d}},
+#' of pseudorandom numbers. In each iteration, the seed is power up to square,
+#' the middle digits are extracted, and the result is divided by \eqn{10^{d}},
 #' where \eqn{d} is the number of digits in the original seed.
 #'
 #' @param seed Integer initial value (the seed) that determines the starting
@@ -40,8 +40,8 @@ Squaremean <- function(seed, n) {
     square <- seed^2
     xi <- format(square, scientific = FALSE)
     xi <- paste0(strrep("0", 2 * dig - nchar(xi)), xi)
-    start <- floor(dig / 2) + 1
-    end <- start + dig - 1
+    start <- dig - 1
+    end <- 2* start
     middle <- substr(xi, start, end)
     ri <- as.numeric(middle) / 10^dig
     seed <<- as.numeric(middle)
