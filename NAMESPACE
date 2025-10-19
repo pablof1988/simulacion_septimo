@@ -3,5 +3,6 @@
 export(Period)
 export(Squaremean)
 export(gcong)
+export(glewis)
 export(independ)
 export(uniftest)
