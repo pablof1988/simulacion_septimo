@@ -13,8 +13,7 @@
 #'
 #'
 #' @details
-#'The generator produces a sequence of pseudorandom numbers using the
-#' recurrence relation:
+#'The generator produces a sequence of pseudorandom numbers.
 #' \deqn{X_{i+1} = (a \times X_i) \mod m}
 #' where \eqn{a = 7^5} and \eqn{m = 2^{31} - 1 = 2147483647}.
 #'
