@@ -8,8 +8,6 @@ glewis(n,seed)
 }
 \arguments{
 \item{n}{Integer. Number of pseudorandom values to generate.}
-
-\item{seed}{Integer initial value (the seed), between 1 and \eqn{m - 1}.}
 }
 \value{
 A numeric vector of length \code{n} containing pseudorandom numbers
@@ -27,7 +25,7 @@ where \eqn{a = 7^5} and \eqn{m = 2^{31} - 1 = 2147483647}.
 
 Here, \eqn{m} is a *prime number*, and \eqn{a = 16807}
 is a *positive primitive root* modulo \eqn{m}, which guarantees a *maximal period*
-of \eqn{m - 1}.
+of 2147483647.
 }
 \examples{
 # Generate 5 pseudorandom numbers using the Lewis method

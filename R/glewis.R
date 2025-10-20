@@ -9,7 +9,6 @@
 #' @usage glewis(n,seed)
 #'
 #' @param n Integer. Number of pseudorandom values to generate.
-#' @param seed Integer initial value (the seed), between 1 and \eqn{m - 1}.
 #'
 #'
 #' @details
@@ -19,7 +18,7 @@
 #'
 #' Here, \eqn{m} is a *prime number*, and \eqn{a = 16807}
 #' is a *positive primitive root* modulo \eqn{m}, which guarantees a *maximal period*
-#' of \eqn{m - 1}.
+#' of 2147483647.
 #'
 
 #' @return
@@ -39,14 +38,13 @@
 #' glewis(5,987654)
 #'
 #' @export
-glewis <- function(n, seed) {
-  a <- 7^5
+glewis <- function(n) {
+  seed <- sample(as.numeric(Sys.time()), 1) %/% 10000
   m <- (2^31) - 1
-  x <- seed
-  result <- numeric(n)
+  result <- NULL
   for (i in 1:n) {
-    x <- (a * x) %% m
-    result[i] <- x / m
+    seed <- (7^5 * seed) %% m
+    result[i] <- seed / m
   }
   return(result)
 }

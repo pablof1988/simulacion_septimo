@@ -7,13 +7,13 @@
 gcong(n, seed, a, c = 0, m)
 }
 \arguments{
-\item{n}{Integer. Number of numbers to generate.}
+\item{n}{Integer. Sequence length.}
 
 \item{seed}{Integer. Initial value that determines the starting point of the sequence.}
 
 \item{a}{Integer. The multiplier used in the generator.}
 
-\item{c}{Integer, optional. The additive constant. Default is 0.}
+\item{c}{Integer, The additive constant. Default is 0.}
 
 \item{m}{Integer. The modulus used in the generator.}
 }
@@ -21,13 +21,13 @@ gcong(n, seed, a, c = 0, m)
 A numeric vector of length \code{n} containing the sequence of normalized pseudo-random numbers.
 }
 \description{
-Implements a linear congruential generator to create a sequence of pseudo-random numbers.
+Implements a linear congruential generator to create a sequence of pseudo-random numbers from an uniform distribution U(0, 1).
 }
 \details{
 The linear congruential generator is one of the oldest and best-known algorithms for generating pseudo-random numbers.
 The quality of the generated sequence depends on the appropriate choice of parameters \code{a}, \code{c}, and \code{m}.
 
-The formula used is: \deqn{x[i+1] = (a * x[i] + c) \mod m}
+The formula used is: \deqn{x_{i+1} = (a x_i + c) \mod m}
 }
 \examples{
 # Generate a sequence with arbitrary parameters
