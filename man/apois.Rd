@@ -8,18 +8,18 @@ apois(lambda, m)
 }
 \arguments{
 \item{lambda}{Mean of the Poisson distribution. Must be a positive number
-(\\(\\lambda > 0\\)). Larger values imply more events on average.}
+(lambda > 0). Larger values imply more events on average.}
 
 \item{m}{Number of random numbers to generate. Must be a positive integer.}
 }
 \value{
-An integer vector of length `m` with values \\(\\geq 0\\), following
-  a Poisson(\\( \\lambda \\)) distribution.
+An integer vector of length m with values greater than or equal to 0,
+  following a Poisson(lambda) distribution.
 }
 \description{
-Generates a sample of `m` random numbers from a Poisson distribution with
-parameter `lambda` using the **inverse transform method** on the cumulative
-distribution function (CDF). This is an **exact method** — no approximation.
+Generates a sample of m random numbers from a Poisson distribution with
+parameter lambda using the inverse transform method on the cumulative
+distribution function (CDF). This is an exact method — no approximation.
 }
 \examples{
 x <- apois(lambda = 7, m = 10)
@@ -30,8 +30,8 @@ var(x)   # approximately 7
 }
 \references{
 Romero, T. (2019).
-*Simulation of Random Variables*.
-In: *Computational Statistics*.
+Simulation of Random Variables.
+In: Computational Statistics.
 Available at:
-\url{https://tereom.github.io/est-computacional-2019/simulacion-de-variables-aleatorias.html}
+https://tereom.github.io/est-computacional-2019/simulacion-de-variables-aleatorias.html
 }

@@ -10,22 +10,22 @@ abinom(m, n, p)
 \item{m}{Number of random numbers to generate. Must be a positive integer.}
 
 \item{n}{Number of trials in the binomial experiment. Must be a non-negative
-integer (\\(n \\geq 0\\)).}
+integer (n >= 0).}
 
-\item{p}{Probability of success on each trial. Must be in the interval
-\\([0, 1]\\).}
+\item{p}{Probability of success on each trial. Must be between 0 and 1.}
 }
 \value{
-An integer vector of length `m` with values between `0` and `n`,
-  following a Binomial(\\(n, p\\)) distribution.
+An integer vector of length m with values between 0 and n,
+  following a Binomial(n, p) distribution.
 }
 \description{
-Generates a sample of `m` random numbers from a **binomial distribution**
-with parameters `n` (number of trials) and `p` (success probability) using
-the **inverse transform method** on the cumulative distribution function (CDF).
-This is an **exact method** — no approximation.
+Generates a sample of m random numbers from a binomial distribution with
+parameters n (number of trials) and p (success probability) using
+the method on the cumulative distribution function (CDF).
+This is an exact method — no approximation.
 }
 \examples{
+set.seed(123)
 x <- abinom(m = 10, n = 5, p = 0.3)
 x
 mean(x)  # approximately 1.5
