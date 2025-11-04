@@ -2,7 +2,13 @@
 
 export(Period)
 export(Squaremean)
+export(abinom)
+export(apois)
 export(gcong)
 export(glewis)
 export(independ)
 export(uniftest)
+importFrom(stats,dbinom)
+importFrom(stats,dpois)
+importFrom(stats,qpois)
+importFrom(stats,runif)
