@@ -8,11 +8,11 @@
 #' @usage apois(lambda, m)
 #'
 #' @param lambda Mean of the Poisson distribution. Must be a positive number
-#'   (\\(\\lambda > 0\\)). Larger values imply more events on average.
+#'   (\eqn{\lambda > 0}). Larger values imply more events on average.
 #' @param m Number of random numbers to generate. Must be a positive integer.
 #'
-#' @return An integer vector of length `m` with values \\(\\geq 0\\), following
-#'   a Poisson(\\( \\lambda \\)) distribution.
+#' @return An integer vector of length `m` with values \eqn{\ge 0}, following
+#'   a Poisson\eqn{(\lambda)} distribution.
 #'
 #' @references
 #' Romero, T. (2019).
@@ -37,3 +37,4 @@ apois <- function(lambda, m) {
   Fx <- cumsum(dpois(0:k, lambda = lambda))  # CDF: F(x) = P(X <= x)
   findInterval(u, Fx)                     # Inversion: X = min { x : F(x) >= u }
 }
+
