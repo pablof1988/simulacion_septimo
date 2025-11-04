@@ -20,13 +20,12 @@ An integer vector of length `m` with values between `0` and `n`,
   following a Binomial(\\(n, p\\)) distribution.
 }
 \description{
-Generates a sample of `m` random numbers from a **Binomial distribution**
+Generates a sample of `m` random numbers from a **binomial distribution**
 with parameters `n` (number of trials) and `p` (success probability) using
 the **inverse transform method** on the cumulative distribution function (CDF).
 This is an **exact method** — no approximation.
 }
 \examples{
-set.seed(123)
 x <- abinom(m = 10, n = 5, p = 0.3)
 x
 mean(x)  # approximately 1.5
