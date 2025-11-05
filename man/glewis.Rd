@@ -4,7 +4,7 @@
 \alias{glewis}
 \title{Pseudorandom Number Generator using the Lewis Method}
 \usage{
-glewis(n,seed)
+glewis(n)
 }
 \arguments{
 \item{n}{Integer. Number of pseudorandom values to generate.}
@@ -29,10 +29,7 @@ of 2147483647.
 }
 \examples{
 # Generate 5 pseudorandom numbers using the Lewis method
-glewis(5,12345 )
-
-# Try with a different seed
-glewis(5,987654)
+glewis(5)
 
 }
 \references{

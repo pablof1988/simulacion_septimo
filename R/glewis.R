@@ -6,7 +6,7 @@
 #' pseudo-random numbers.
 #'
 #'
-#' @usage glewis(n,seed)
+#' @usage glewis(n)
 #'
 #' @param n Integer. Number of pseudorandom values to generate.
 #'
@@ -32,10 +32,7 @@
 #'
 #' @examples
 #' # Generate 5 pseudorandom numbers using the Lewis method
-#' glewis(5,12345 )
-#'
-#' # Try with a different seed
-#' glewis(5,987654)
+#' glewis(5)
 #'
 #' @export
 glewis <- function(n) {
