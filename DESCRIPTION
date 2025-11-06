@@ -14,7 +14,7 @@ Authors@R: c(
       role = "ctb"
     )
   )
-Imports: fdth
+Imports: fdth, stats
 Description: It is a package used for the Simulation subject in ESPOCH - Statistics carreer.
               Use this package only for educational purposes.
 License: GPL-3

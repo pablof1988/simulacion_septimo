@@ -23,16 +23,9 @@
 #' mean(x)  # approximately 1.5
 #' var(x)   # approximately 1.05
 #'
-#' @importFrom stats dbinom
 #' @export
 abinom <- function(m, n, p) {
-  stopifnot(
-    m >= 1, m == as.integer(m),
-    n >= 0, n == as.integer(n),
-    p >= 0, p <= 1
-  )
-
   u  <- glewis(m)                         # Uniform(0,1) from glewis
-  Fx <- cumsum(dbinom(0:n, n, p))         # CDF: F(x) = P(X <= x)
+  Fx <- cumsum(stats::dbinom(0:n, n, p))         # CDF: F(x) = P(X <= x)
   findInterval(u, Fx)                     # Inversion
 }

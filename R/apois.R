@@ -27,13 +27,10 @@
 #' mean(x)  # approximately 7
 #' var(x)   # approximately 7
 #'
-#' @importFrom stats dpois qpois runif
 #' @export
 apois <- function(lambda, m) {
-  stopifnot(lambda > 0, m >= 1, m == as.integer(m))
-
-  u  <- runif(m)                          # Step 1: U ~ Unif(0,1)
-  k  <- qpois(0.999, lambda = lambda)     # Upper bound: covers 99.9% of mass
-  Fx <- cumsum(dpois(0:k, lambda = lambda))  # CDF: F(x) = P(X <= x)
+  u  <- glewis(m)                          # Step 1: U ~ Unif(0,1)
+  k  <- stats::qpois(0.999, lambda = lambda)     # Upper bound: covers 99.9% of mass
+  Fx <- cumsum(stats::dpois(0:k, lambda = lambda))  # CDF: F(x) = P(X <= x)
   findInterval(u, Fx)                     # Inversion: X = min { x : F(x) >= u }
 }

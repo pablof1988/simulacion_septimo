@@ -32,7 +32,7 @@ uniftest <- function(u){
 
   # test
   est <- sum(((pi0 - pi)^2) / pi)
-  pval <- pchisq(est, 9, lower.tail = F)
+  pval <- stats::pchisq(est, 9, lower.tail = F)
 
   c("est" = est, "g.l" = 9, "p-val" = pval)
 }
