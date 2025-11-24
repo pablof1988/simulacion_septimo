@@ -15,7 +15,7 @@
 #'   \item \eqn{r = 2836}
 #' }
 #'
-#' @usage r_miller(n, seed)
+#' @usage gmiller(n, seed)
 #'
 #' @param n Positive integer. Number of pseudorandom numbers to generate.
 #' @param seed Initial integer in the range \eqn{[1, m-1]}. Generator seed.
@@ -43,13 +43,13 @@
 #'
 #' @examples
 #' # Generate 5 numbers with seed 12345
-#' r_miller(5, 12345)
+#' gmiller(5, 12345)
 #'
 #' # Classic validation from the article: z_10000 = 1043618065
-#' r_miller(10000, 1)$semilla_final == 1043618065
+#' gmiller(10000, 1)$semilla_final == 1043618065
 #'
 #' # Generate a quick histogram
-#' x <- r_miller(10000, 123)$v_aleatorias
+#' x <- gmiller(10000, 123)$v_aleatorias
 #' hist(x, breaks = 20)
 #'
 #' @references
@@ -57,7 +57,7 @@
 #'
 #'
 #' @export
-r_miller <- function(n, seed) {
+gmiller <- function(n, seed) {
 
   a    <- 16807L
   modu <- 2147483647L
