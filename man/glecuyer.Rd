@@ -2,36 +2,46 @@
 % Please edit documentation in R/glecuyer.R
 \name{glecuyer}
 \alias{glecuyer}
-\title{Combined Random Number Generators}
+\title{L’Ecuyer 1988 Pseudo-Random Number Generator}
 \usage{
 glecuyer(n = 1, s1 = 12345, s2 = 67890,
          m1 = 2147483563, a1 = 40014,
          m2 = 2147483399, a2 = 40692)
 }
 \arguments{
-\item{n}{Cantidad de números aleatorios a generar.}
+\item{n}{Number of random numbers to generate.}
 
-\item{s1}{Semilla inicial del primer generador.}
+\item{s1}{Initial seed of the first generator.}
 
-\item{s2}{Semilla inicial del segundo generador.}
+\item{s2}{Initial seed of the second generator.}
 
-\item{m1}{Módulo del primer generador.}
+\item{m1}{Modulus of the first generator.}
 
-\item{a1}{Multiplicador del primer generador.}
+\item{a1}{Multiplier of the first generator.}
 
-\item{m2}{Módulo del segundo generador.}
+\item{m2}{Modulus of the second generator.}
 
-\item{a2}{Multiplicador del segundo generador.}
+\item{a2}{Multiplier of the second generator.}
 }
 \value{
-Una lista con dos elementos:
+A list with two elements:
 \describe{
-  \item{numeros}{Vector de números aleatorios uniformes en (0,1).}
-  \item{semillas_finales}{Vector con las semillas actualizadas \code{s1} y \code{s2}.}
+  \item{numeros}{Vector of uniformly distributed random numbers in (0,1).}
+  \item{semillas_finales}{Vector containing the updated seeds \code{s1} and
+  \code{s2}.}
 }
 }
 \description{
-Implementación del generador combinado de L'Ecuyer para producir números
-pseudoaleatorios uniformes en (0,1). Utiliza dos generadores congruenciales
-multiplicativos que se combinan para mejorar el periodo y las propiedades estadísticas.
+Implementation of L'Ecuyer's combined generator to
+produce pseudo-random numbers uniformly distributed
+in (0,1). It uses two multiplicative congruential generators
+that are combined to improve the period and statistical properties.
+}
+\examples{
+
+res2 <- glecuyer(n = 2, s1 = 12345, s2 = 67890)
+sprintf("\%.12f", res2$numeros)
+res10000 <- glecuyer(n = 10000, s1 = 987654, s2 = 123456)
+sprintf("\%.12f", res10000$numeros)
+
 }
