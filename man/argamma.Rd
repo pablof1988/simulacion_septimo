@@ -4,25 +4,25 @@
 \alias{argamma}
 \title{Acceptance and rejection method for the GAMMA distribution}
 \usage{
-argamma(m, k, theta)
+argamma(n, k, theta)
 }
 \arguments{
-\item{m}{Number of random values to generate.}
+\item{n}{Number of random values to generate.}
 
 \item{k}{Shape parameter of the Gamma distribution.}
 
 \item{theta}{Scale parameter of the Gamma distribution.}
 }
 \value{
-A numeric vector of length \code{m} containing random values generated
+A numeric vector of length \code{n} containing random values generated
 from a Gamma(k, θ) distribution.
 }
 \description{
-Implementation of the **Acceptance–Rejection method** to generate random
-numbers from a **Gamma(k, θ)** distribution.
-The algorithm uses a **Uniform(0, b)** proposal distribution, where
+Implementation of the Acceptance–Rejection method to generate random
+numbers from a Gamma(k, θ) distribution.
+The algorithm uses a Uniform(0, b) proposal distribution, where
 \code{b} corresponds to the 0.999 quantile of the Gamma distribution, and
-constructs a **constant majorizing function** based on the maximum value of
+constructs a constant majorizing function based on the maximum value of
 the Gamma density at its mode \code{xmax = (k - 1) * theta}.
 
 Each candidate \code{x} generated from the Uniform proposal is accepted with
@@ -32,12 +32,7 @@ This procedure ensures that all accepted values follow the specified
 Gamma distribution.
 }
 \examples{
-# Generate 5 values from a Gamma(3, 2) distribution
-argamma(5, k = 3, theta = 2)
-
-# Generate 10,000 values and compare with the theoretical density
-x <- argamma(10000, k = 4, theta = 1)
-hist(x, freq = FALSE, breaks = 40)
-curve(dgamma(x, 4, 1), add = TRUE, col = "red", lwd = 2)
+# Generate 100 values from a Gamma(3, 2) distribution
+argamma(100, k = 3, theta = 2)
 
 }
